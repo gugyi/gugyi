@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gugyi :)</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+        .image-container img {
+            position: absolute;
+            width: 150px; /* Increased size */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>gugyi :)</h1>
+    <div class="image-container"></div>
+    
+    <script>
+        const imageContainer = document.querySelector('.image-container');
+        const imageUrls = [
+            'https://www.shutterstock.com/shutterstock/photos/2468063881/display_1500/stock-photo-golden-dogecoin-coin-cryptocurrency-dogecoin-doge-cryptocurrency-on-the-gray-background-2468063881.jpg',
+            'https://www.shutterstock.com/shutterstock/photos/2484370373/display_1500/stock-photo-walking-a-miniature-dog-at-the-beach-2484370373.jpg',
+            'https://www.shutterstock.com/shutterstock/photos/2501462781/display_1500/stock-photo-beagle-puppy-brown-and-white-2501462781.jpg'
+        ];
+        
+        function addRandomImage() {
+            const img = document.createElement('img');
+            img.src = imageUrls[Math.floor(Math.random() * imageUrls.length)];
+            img.style.top = Math.random() * window.innerHeight + 'px';
+            img.style.left = Math.random() * window.innerWidth + 'px';
+            imageContainer.appendChild(img);
+        }
+        
+        for (let i = 0; i < 50; i++) { // Increased number of images
+            addRandomImage();
+        }
+    </script>
+</body>
+</html>
